@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: ae3c951539a2
+Revision ID: e98e61d81916
 Revises: 
-Create Date: 2024-04-05 11:56:10.310127
+Create Date: 2024-04-05 17:10:24.139809
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'ae3c951539a2'
+revision = 'e98e61d81916'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -24,15 +24,14 @@ def upgrade():
     sa.Column('correo', sa.String(length=120), nullable=False),
     sa.Column('fecha_de_registro', sa.String(length=120), nullable=False),
     sa.Column('pregunta1', sa.String(length=120), nullable=False),
-    sa.Column('respuesta1', sa.String(length=120), nullable=False),
+    sa.Column('respuesta1', sa.String(length=120), nullable=True),
     sa.Column('pregunta2', sa.String(length=120), nullable=False),
-    sa.Column('respuesta2', sa.String(length=120), nullable=False),
+    sa.Column('respuesta2', sa.String(length=120), nullable=True),
     sa.Column('pregunta3', sa.String(length=120), nullable=False),
-    sa.Column('respuesta3', sa.String(length=120), nullable=False),
-    sa.Column('fecha_de_questionario', sa.String(length=120), nullable=False),
+    sa.Column('respuesta3', sa.String(length=120), nullable=True),
+    sa.Column('fecha_de_cuestionario', sa.String(length=120), nullable=True),
     sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('correo'),
-    sa.UniqueConstraint('nombre')
+    sa.UniqueConstraint('correo')
     )
     # ### end Alembic commands ###
 

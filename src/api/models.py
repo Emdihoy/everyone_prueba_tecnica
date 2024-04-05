@@ -4,23 +4,26 @@ db = SQLAlchemy()
 
 class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(120), unique=True, nullable=False)
+    nombre = db.Column(db.String(120), unique=False, nullable=False)
     correo = db.Column(db.String(120), unique=True, nullable=False)
     fecha_de_registro = db.Column(db.String(120), unique=False, nullable=False)
     pregunta1 = db.Column(db.String(120), unique=False, nullable=False)
-    respuesta1 = db.Column(db.String(120), unique=False, nullable=False)
+    respuesta1 = db.Column(db.String(120), unique=False, nullable=True)
     pregunta2 = db.Column(db.String(120), unique=False, nullable=False)
-    respuesta2 = db.Column(db.String(120), unique=False, nullable=False)
+    respuesta2 = db.Column(db.String(120), unique=False, nullable=True)
     pregunta3 = db.Column(db.String(120), unique=False, nullable=False)
-    respuesta3 = db.Column(db.String(120), unique=False, nullable=False)
-    fecha_de_questionario = db.Column(db.String(120), unique=False, nullable=False)
+    respuesta3 = db.Column(db.String(120), unique=False, nullable=True)
+    fecha_de_cuestionario = db.Column(db.String(120), unique=False, nullable=True)
 
     def __repr__(self):
-        return f'<User {self.email}>'
+        return f'<User {self.correo}>'
 
     def serialize(self):
         return {
             "id": self.id,
-            "email": self.email,
-            "fecha_de_registro": self.fecha_de_registro
+            "nombre": self.nombre,
+            "correo": self.correo,
+            "respuesta1": self.respuesta1,
+            "respuesta2": self.respuesta2,
+            "respuesta3": self.respuesta3,
         }
