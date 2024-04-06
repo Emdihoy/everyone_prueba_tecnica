@@ -4,7 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
-import { Single } from "./pages/single";
+import { Registro } from "./pages/registro";
 import injectContext from "./store/appContext";
 
 //create your first component

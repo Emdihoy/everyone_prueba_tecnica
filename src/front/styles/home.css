@@ -5,3 +5,49 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+.ivecoLogo {
+    width: 90%;
+    width: 181px; 
+    margin-left: 5%;
+    background-size: cover;
+
+}
+.ivecoLogo img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.banner_parallax{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    background-size: cover;
+
+}
+
+
+.banner_parallax .bannerbg{
+    object-fit: none;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-position: 0% 23%;
+    object-fit: cover;
+    grid-area: 1/1;
+}
+
+.banner_parallax .banner {
+    position: relative;
+    max-width: 100%;
+    width: 85%;
+    height: auto;
+    margin: auto; 
+    background-size: cover;
+    grid-area: 1/1;
+    object-fit: cover;
+    grid-area: 1/1;
+    margin-top: -20%;
+
+}
