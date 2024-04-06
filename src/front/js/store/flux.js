@@ -2,7 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       demo: [],
-      usuario: []
+      usuario: [],
+      isRegistered: false
     },
     actions: {
       crearUsuario: async (nombre, correo) => {
@@ -14,17 +15,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 			alert ("Por favor, introduce tu correo")
 		  }
 			else{
-            const response = await fetch(
-              process.env.BACKEND_URL + '/api/registro',
-              {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  nombre: nombre,
-                  correo: correo
-                })
-              }
-            )
+        const response = await fetch(
+          process.env.BACKEND_URL + '/api/registro',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              nombre: nombre,
+              correo: correo
+            })
+          }
+        )
+        setStore({ isRegistered: true })
           }
         } catch (error) {
           console.error('Error al crear usuario:', error)
