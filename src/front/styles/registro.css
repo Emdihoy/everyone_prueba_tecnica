@@ -1,14 +1,12 @@
 .main{
     width: 70%;
     max-width: 450px;
-    margin: auto;
+    padding: 3%;
 }
-
 .main .inputRegistro{
     border-radius: 20px;
     margin-bottom: 8px;
     width: 100%;
-
 }
 .main .desplegable{
     background-color: white;
@@ -19,12 +17,9 @@
     color: gray;
     justify-content: flex-start;
 }
-
 .main .form-check{
 margin: 40px;
-
 }
-
 .main .botonFormulario{
     border-radius: 20px;
     margin-bottom: 8px;

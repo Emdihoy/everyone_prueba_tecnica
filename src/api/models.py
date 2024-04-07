@@ -23,7 +23,9 @@ class Usuario(db.Model):
             "id": self.id,
             "nombre": self.nombre,
             "correo": self.correo,
+            "fecha_de_registro": self.fecha_de_registro,
             "respuesta1": self.respuesta1,
             "respuesta2": self.respuesta2,
             "respuesta3": self.respuesta3,
+            "fecha_de_cuestionario": self.fecha_de_cuestionario,
         }

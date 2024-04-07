@@ -1,6 +1,9 @@
 
 import click
 from api.models import db, Usuario
+import pytz
+from datetime import datetime
+from pytz import timezone
 
 """
 In this file, you can add as many commands as you want using the @app.cli.command decorator
@@ -17,15 +20,16 @@ def setup_commands(app):
     @app.cli.command("insert-test-users") # name of our command
     @click.argument("count") # argument of out command
     def insert_test_users(count):
+        fecha_hora_esp = datetime.now(pytz.timezone('Europe/Madrid'))
         print("Creating test users")
         for x in range(1, int(count) + 1):
-            user = User()
-            user.email = "test_user" + str(x) + "@test.com"
-            user.password = "123456"
-            user.is_active = True
+            user = Usuario()
+            user.nombre = "test_user" + str(x) + "@test.com"
+            user.correo = "123456",
+            user.fecha_de_registro = fecha_hora_esp
             db.session.add(user)
             db.session.commit()
-            print("User: ", user.email, " created.")
+            print("User: ", user.correo, " created.")
 
         print("All test users created")
 

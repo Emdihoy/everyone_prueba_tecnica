@@ -4,16 +4,15 @@
     margin:auto;
     display: flex;
 }
-
 .main .inputPregunta{
     border-radius: 20px;
     margin-bottom: 8px;
     width: 100%;
-    
+    height: fit-content;
+    min-height: 15px;
+    font-size: medium;    
     /* field-sizing: content; */
-
 }
-
 .main .botonCuestionario{
     border-radius: 20px;
     margin-bottom: 8px;
