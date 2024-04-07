@@ -11,6 +11,8 @@ import '../../styles/landingheader.css'
 export const LandingHeader = () => {
   const { store, actions } = useContext(Context)
 
+  
+
   return (
     <>
       <div className='d-block col-12'>
@@ -25,23 +27,25 @@ export const LandingHeader = () => {
         </div>
         <div className='text-center'>
           {store.isRegistered === true ? (
-            <h1 className='titulo display-2 h1'>
+            <h1 className='titulo'>
               <strong>Responde estas preguntas y gana</strong>
             </h1>
           ) : (
             <>
-              <h1 className='titulo display-2 h1'>
-                <strong>Ven a probar nuestros vehículos</strong>
+              <h1 className='titulo'>
+               Ven a probar nuestros vehículos
               </h1>
-              <p className='titulo h4'>
-                Registra tus datos para reservar una prueba del vehículo que
-                desees
-              </p>
+              <div className="conenedorSubtitulo">
+                <p className='subTitulo'>
+                  Registra tus datos para reservar una prueba<br></br>del vehículo que
+                  te gustaria probar.
+                </p>
+              </div>
             </>
           )}
           {store.isRegistered === true &&
           store.cuestionarioCompletado === true ? (
-            <h1 className='titulo display-2 h1'>
+            <h1 className='titulo'>
               <strong>Participa en el sorteo y gana</strong>
             </h1>
           ) : null}

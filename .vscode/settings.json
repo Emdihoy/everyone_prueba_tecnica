@@ -6,5 +6,8 @@
     },
     "[javascript]": {
         "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "mohd-akram.vscode-html-format"
     }
 }
