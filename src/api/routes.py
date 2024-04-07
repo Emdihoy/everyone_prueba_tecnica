@@ -21,6 +21,14 @@ def obtener():
     return jsonify( results), 200
 
 
+@api.route('/usuario/<int:usuario_id>', methods=['GET'])
+
+def get_a_user(usuario_id):
+
+    un_usuario = Usuario.query.filter_by(id=usuario_id).first()
+    return jsonify( un_usuario.serialize()), 200
+
+
 @api.route('/registro', methods=['POST'])
 def post_fila():
     fecha_actual = datetime.now()

@@ -5,6 +5,8 @@ import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
 import { Cuestionario } from "./pages/cuestionario.js";
+import { Sorteo } from "./pages/sorteo.js";
+import { AdminPanel } from "./pages/adminPanel.js";
 
 
 import injectContext from "./store/appContext";
@@ -24,6 +26,8 @@ const Layout = () => {
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Cuestionario />} path="/cuestionario" />
+                        <Route element={<Sorteo />} path="/sorteo" />
+                        <Route element={<AdminPanel />} path="/adminPanel" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                 </ScrollToTop>
