@@ -24,6 +24,7 @@ const injectContext = PassedComponent => {
 		useEffect(() => {
 			state.actions.registroAutomatico("usuarioEjemplo", "correo@ejemplo.com", "Invirtiendo en infraestructura", "Si, estoy interesado en sus servicios", "Posiblemente, en un futuro proximo" )
 			state.actions.registroAutomatico("usuarioEjemplo2", "correo2@ejemplo.com", "Reduciendo precios", "No", "No" )
+			state.actions.registroAutomatico("Julio", "Julio@ejemplo.com", "Mejorando estrategia de marketing", "Quizas", "Si" )
 			state.actions.obtenerTodosUsuario(); // 
 		}, []);
 		return (

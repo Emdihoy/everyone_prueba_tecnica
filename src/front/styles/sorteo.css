@@ -2,9 +2,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
- 
 }
 
 .cartaSorteo ul {
     width: 30%;
+    width: 35svh;
 }
