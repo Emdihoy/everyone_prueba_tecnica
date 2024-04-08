@@ -4,12 +4,15 @@ import { LandingHeader } from '../pages/landingHeader'
 import { Navigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
-// import "../../styles/sorteo.css";
+import "../../styles/sorteo.css";
 
 export const Sorteo = () => {
   const { store, actions } = useContext(Context)
-  {
-    store.cuestionarioCompletado === false ? <Navigate to='/' /> : null
+
+  function descartaBooleans(){
+    store.cuestionarioCompletado = false; 
+    store.isRegistered = false;
+    store.isAdmin = true;
   }
 
   useEffect(() => {
@@ -46,6 +49,7 @@ export const Sorteo = () => {
   return (
     <>
       <LandingHeader />
+      {store.cuestionarioCompletado === false ? <Navigate to='/cuestionario' /> : null}
       <div className='container text-center px-5'>
         <button
           onClick={() => iniciarSorteo(todosLosUsuarios)}
@@ -55,32 +59,33 @@ export const Sorteo = () => {
           Iniciar sorteo
         </button>
       </div>
-      <div className='container text-center'>
+      <div className='cartaSorteo'>
         <ul className='list-group m-5'>
           <li className='list-group-item'>
-            <strong>Nombre: </strong>
+            <strong>Nombre: </strong><br />
             {usuarioGanador.nombre}
           </li>
           <li className='list-group-item'>
-            <strong>Correo: </strong> {usuarioGanador.correo}
+            <strong>Correo: </strong><br /> {usuarioGanador.correo}
           </li>
           <li className='list-group-item'>
-            <strong>Como podria IVECO mejorar?: </strong>{' '}
+            <strong>¿Cómo podría IVECO mejorar?: </strong><br />
             {usuarioGanador.respuesta1}
           </li>
           <li className='list-group-item'>
-            <strong>Cual es el mejor camion de nuestra flota?: </strong>
+            <strong>¿Eres empresario?: </strong><br />
             {usuarioGanador.respuesta2}
           </li>
           <li className='list-group-item'>
-            <strong>Cual es tu camion ideal?: </strong>
+            <strong>¿Necesitas una flota?: </strong><br />
             {usuarioGanador.respuesta3}
           </li>
         </ul>
       </div>
       <div className='container text-center mt-5 mb-5'>
         <Link to={'/adminPanel'}>
-          <button type='button' className='btn btn-danger mb-5'>
+          <button onClick={() =>descartaBooleans()}
+            type='button' className='btn btn-danger mb-5'>
             Soy administrador
           </button>
         </Link>

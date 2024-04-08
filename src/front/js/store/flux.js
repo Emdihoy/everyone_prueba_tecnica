@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       usuario: [],
       usuarioId: null,
       isRegistered: false,
-      cuestionarioCompletado: false
+      cuestionarioCompletado: false,
+      isAdmin: false
     },
     actions: {
       registroAutomatico (nombre, correo, respuesta1, respuesta2, respuesta3) {

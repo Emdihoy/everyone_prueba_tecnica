@@ -24,6 +24,7 @@ export const Cuestionario = () => {
   return (
     <>
       <LandingHeader />
+      {store.isRegistered === false ? <Navigate to='/' /> : null}
       <div className='flex-column main p-5'>
         <div className='contenedorPregunta form-floating mb-3'>
           <input

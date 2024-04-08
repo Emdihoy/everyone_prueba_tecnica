@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 export const AdminPanel = () => {
   const { store, actions } = useContext(Context)
   const todosLosUsuarios = store.usuario
-
+  
   useEffect(() => {
     actions.obtenerTodosUsuario()
   }, [todosLosUsuarios])
@@ -15,14 +15,16 @@ export const AdminPanel = () => {
   return (
     <>
       <LandingHeader />
-      <div className='container text-center p-5'>
-        <table className='table table-light table-striped'>
-          <thead>
+      {store.isAdmin === false ? <Navigate to='/' /> : null}
+
+      <div className='adminTable table-responsive text-center p-5'>
+        <table className='adminTable table table-md table-striped'>
+          <thead className="Default">
             <tr>
               <th scope='col'>ID</th>
               <th scope='col'>Nombre</th>
               <th scope='col'>Correo</th>
-              <th scope='col'>fecha de registro</th>
+              <th scope='col'>Fecha de registro</th>
               <th scope='col'>¿Cómo podría IVECO mejorar?</th>
               <th scope='col'>¿Eres empresario?</th>
               <th scope='col'>¿Necesitas una flota?</th>
@@ -32,7 +34,7 @@ export const AdminPanel = () => {
           </thead>
           <tbody>
             {todosLosUsuarios.map((item, index) => (
-              <tr>
+              <tr className="filaGris">
                 <th key={index} scope='row'>
                   {item.id}
                 </th>
